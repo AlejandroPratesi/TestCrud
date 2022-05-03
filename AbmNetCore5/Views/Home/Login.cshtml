@@ -1,0 +1,41 @@
+﻿  <div class="row">
+        <div class="col-lg-4 col-xl-4 col-sm-12 col-md-4"></div>
+        <div class="col-lg-4 col-xl-4 col-sm-12 col-md-4">
+            <br />
+            <div class="container-fluid border shadow-lg p-3 mb-5 bg-white rounded">
+                <br />
+                @{
+                    if (!string.IsNullOrEmpty(ViewBag.Message))
+                    {
+
+                        <div class="alert alert-info alert-dismissible mt-1">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>! </strong>  @ViewBag.Message
+                        </div>
+
+                    }
+                }
+                <form asp-controller="Home" asp-action="Login" method="post">
+                    <div class="form-group">
+                        <label for="usr">Username</label>
+                        <input type="text" class="form-control" id="usr" placeholder="" name="usr" required autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="" name="pwd" required autocomplete="off">
+                    </div>
+
+                    <button type="submit" class="btn btn-outline-info btn-block">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Iniciar sesion
+                    </button>
+                </form>
+
+                <br />
+                <br />
+
+            </div>
+
+        </div>
+        <div class="col-lg-4 col-xl-4 col-sm-12 col-md-4"></div>
+    </div>

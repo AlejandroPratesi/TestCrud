@@ -1,0 +1,59 @@
+﻿
+@model AbmNetCore5.Models.DB.TUser
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-12 form-inline">
+            <a class="btn btn-light" title="Ir al listado" asp-action="Index" asp-controller="Home">
+                <i class="fa fa-arrow-left"></i></a>  <h4>&nbsp;&nbsp; Nuevo usuario</h4>
+        </div>
+    
+    </div>
+     <br />
+    <div class="row">
+     <div class="col-sm-10">
+         <form method="post" asp-action="Create">
+            
+             <div class="form-group row">
+                 <label asp-for="TxtUser" class="col-sm-2"></label>
+                 <input asp-for="TxtUser" autocomplete="off" class="col-sm-10 form-control" />
+             </div>
+             <div class="form-group row">
+                 <label asp-for="TxtPassword" class="col-sm-2"></label>
+                 <input asp-for="TxtPassword" required autocomplete="off" class="col-sm-4 form-control" />
+
+                 <label asp-for="TxtNombre" class="col-sm-2"></label>
+                 <input asp-for="TxtNombre" required autocomplete="off" class="col-sm-4 form-control" />
+             </div>
+             <div class="form-group row">
+                 <label asp-for="TxtApellido" class="col-sm-2"></label>
+                 <input asp-for="TxtApellido" class="col-sm-4 form-control" />
+
+                 <label asp-for="NroDoc" class="col-sm-2"></label>
+                 <input asp-for="NroDoc" class="col-sm-4 col-sm-4 form-control" />
+             </div>
+             <div class="form-group row">
+                 <label asp-for="CodRol" class="col-sm-2"></label>
+                 <input asp-for="CodRol" required autocomplete="off" class="col-sm-4 form-control" />
+
+                 <label asp-for="SnActivo" class="col-sm-2"></label>
+                 <input asp-for="SnActivo" autocomplete="off" class="col-sm-4 form-control" />
+             </div>
+           
+         
+             <div class="form-group row float-right border border-bottom-0 border-left-0 border-right-0">
+                 <input type="submit" value="Aceptar" class="btn btn-primary btn-sm float-right" />
+             </div>
+         </form>
+           
+     </div>
+    </div>
+
+</div>
+
+

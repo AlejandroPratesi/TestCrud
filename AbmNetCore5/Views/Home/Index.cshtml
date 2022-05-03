@@ -1,0 +1,103 @@
+﻿@model IEnumerable<AbmNetCore5.Models.DB.TUser>
+
+@{
+    ViewData["Title"] = "Listado usuarios";
+}
+
+<div class="text-center">
+    <h3>Welcome UserAdmin</h3>  
+</div>
+<br />
+
+<div class="container-fluid">
+
+    @if (TempData["msje"] != null)
+    {
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>@TempData["msje"]</strong> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    }
+
+
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>Listdo de usuarios</h3>
+        </div>
+        <div class="col-sm-4">
+            <a class="btn btn-primary d-block" asp-action="Create" asp-controller="Home">
+                <i class="fas fa-plus"></i> Nuevo usuario
+            </a>
+        </div>
+    </div>
+
+
+    <div class="row">
+        @if (Model.Count() > 0)
+        {
+            <table class="table table-hover">
+                <tread>
+                    <tr>
+                        <th>@Html.DisplayNameFor(m=> m.CodUsuario)</th>
+                        <th>@Html.DisplayNameFor(m=> m.TxtUser)</th>
+                        <th>@Html.DisplayNameFor(m=> m.TxtPassword)</th>
+                        <th>@Html.DisplayNameFor(m=> m.TxtNombre)</th>
+                        <th>@Html.DisplayNameFor(m=> m.TxtApellido)</th>
+                        <th>@Html.DisplayNameFor(m=> m.NroDoc)</th>
+                        <th>@Html.DisplayNameFor(m=> m.CodRol)</th>
+                        <th>@Html.DisplayNameFor(m=> m.SnActivo)</th>
+                    </tr>
+                </tread>
+                <tbody>
+                    @foreach(var items in Model)
+                    {
+                     <tr>
+                            <td>
+                                @items.CodUsuario
+                            </td>
+                            <td>
+                                @items.TxtUser
+                            </td>
+                            <td>
+                                @items.TxtPassword
+                            </td>
+                             <td>
+                                @items.TxtNombre
+                            </td>
+                             <td>
+                                @items.TxtApellido
+                            </td>
+                             <td>
+                                @items.NroDoc
+                            </td>
+                             <td>
+                                @items.CodRol
+                            </td>
+                             <td>
+                                @items.SnActivo
+                            </td>
+                             
+                            <td>
+                             <a asp-controller="Home" asp-action="Update" title="Editar" asp-route-id="@items.CodUsuario" class="btn btn-link"><i class="fas fa-edit"></i></a>
+                             <a asp-controller="Home" asp-action="Delete" title="Eliminar" asp-route-id="@items.CodUsuario" class="btn btn-link"><i class="fas fa-trash text-black-50"></i></a>            
+                            </td>                            
+                        </tr>
+                        
+                        
+
+                    } 
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No hay registros </p>
+        }
+
+    </div>
+
+
+</div>
+  

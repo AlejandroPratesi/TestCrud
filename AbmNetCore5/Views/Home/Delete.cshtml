@@ -1,0 +1,66 @@
+﻿@model AbmNetCore5.Models.DB.TUser
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-12 form-inline">
+            <a class="btn btn-light" title="Ir al listado" asp-action="Index" asp-controller="Home">
+                <i class="fa fa-arrow-left"></i>
+            </a>  <h4>&nbsp;&nbsp; Eliminar</h4>
+        </div>
+
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-10">
+            <form method="post" asp-action="DeleteUsuario">
+
+                <input type="hidden" asp-for="CodUsuario" />
+    
+           
+                <div class="form-group row">
+                    <label asp-for="TxtUser" class="col-sm-2"></label>
+                    <input asp-for="TxtUser" readonly class="col-sm-4 form-control" />
+
+                    <label asp-for="TxtPassword" class="col-sm-2"></label>
+                    <input asp-for="TxtPassword" readonly class="col-sm-4 form-control" />
+                </div>
+                <div class="form-group row">
+                    <label asp-for="TxtNombre" class="col-sm-2"></label>
+                    <input asp-for="TxtNombre" readonly class="col-sm-10 form-control" />
+                </div>
+                  <div class="form-group row">
+                    <label asp-for="TxtApellido" class="col-sm-2"></label>
+                    <input asp-for="TxtApellido" readonly class="col-sm-10 form-control" />
+                </div>
+                  <div class="form-group row">
+                    <label asp-for="NroDoc" class="col-sm-2"></label>
+                    <input asp-for="NroDoc" readonly class="col-sm-10 form-control" />
+                </div>
+                    <div class="form-group row">
+                    <label asp-for="CodRol" class="col-sm-2"></label>
+                    <input asp-for="CodRol" readonly class="col-sm-10 form-control" />
+                </div>
+                    <div class="form-group row">
+                    <label asp-for="SnActivo" class="col-sm-2"></label>
+                    <input asp-for="SnActivo" readonly class="col-sm-10 form-control" />
+                </div>
+
+                <div class="form-group row float-right border border-bottom-0 border-left-0 border-right-0">
+                    <input type="submit" value="Eliminar" class="btn btn-danger btn-sm float-right" />
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
